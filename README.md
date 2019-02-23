@@ -66,3 +66,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### package-json dependencies 
+  - react -> 리엑트 코어 모듈
+  - react-dom -> DOM랜더링 모듈
+  - react-scripts -> 리엑트 CLI관련 모듈
