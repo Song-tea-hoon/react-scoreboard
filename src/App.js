@@ -6,10 +6,10 @@ import {Player} from "./components/Player";
 class App extends React.Component {
   state = {
     players: [
-      {name: 'LDK', score: 30, id: 0},
-      {name: 'HONG', score: 40, id: 1},
-      {name: 'KIM', score: 50, id: 2},
-      {name: 'PARK', score: 60, id: 3},
+      {name: 'LDK', score: 0, id: 0},
+      {name: 'HONG', score: 0, id: 1},
+      {name: 'KIM', score: 0, id: 2},
+      {name: 'PARK', score: 0, id: 3},
     ]
   }
 
@@ -21,18 +21,28 @@ class App extends React.Component {
     }))
   }
 
+  hadleChangeScore = (id, delta) => {
+    console.log(id, delta)
+    this.setState(prevState => ({
+      players: prevState.players.map(player => player.id === id ? {...player, score: player.score + delta} : player)
+    }))
+  }
+
   render() {
     return (
       <div className="scoreboard">
         <Header title="My scoreboard" totalPlayers={1 + 10}/>
         {/*play list*/}
         {
-          this.state.players.map(player => <Player
+          this.state.players.map((player, index) => <Player
+            // id={player.id}
+            // name={player.name}
+            // score={player.score}
+            {...player}
             key={player.id}
-            id={player.id}
-            name={player.name}
-            score={player.score}
+            index={index}
             removePlayer={this.handleRemove}
+            changeScore={this.hadleChangeScore}
           />)
         }
       </div>
