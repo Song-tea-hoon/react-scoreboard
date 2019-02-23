@@ -22,7 +22,6 @@ class App extends React.Component {
   }
 
   hadleChangeScore = (id, delta) => {
-    console.log(id, delta)
     this.setState(prevState => ({
       players: prevState.players.map(player => player.id === id ? {...player, score: player.score + delta} : player)
     }))
