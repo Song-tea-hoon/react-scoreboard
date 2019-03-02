@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export class Counter extends React.Component {
+  // static 키워드를 이용하여 class내부에 prop-types 선언가능하다.
+  static propTypes = {
+    score: PropTypes.number,
+    index: PropTypes.number,
+    changeScore: PropTypes.func
+  }
+
   render() {
     const {changeScore, score, index} = this.props;
     return (
@@ -15,8 +22,8 @@ export class Counter extends React.Component {
   }
 }
 
-Counter.propTypes = {
-  score: PropTypes.number,
-  index: PropTypes.number,
-  changeScore: PropTypes.func
-}
+// Counter.propTypes = {
+//   score: PropTypes.number,
+//   index: PropTypes.number,
+//   changeScore: PropTypes.func
+// }
