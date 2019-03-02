@@ -18,6 +18,7 @@ export class Player extends React.PureComponent { // PureComponent props의 값�
   }
   // // React.Component에서 render가 실행되기 직전에 호출되는 메서드
   // // (true를 리턴하면 랜더링되고 false이면 랜더링 되지 않는다.)
+  // // return이 설정되지 않으면 에러발생..
   // shouldComponentUpdate(nextProps, nextState, nextContext) {
   //   return true;
   // }
