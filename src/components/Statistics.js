@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const Statistics = (props) => {
 
@@ -22,3 +23,9 @@ export const Statistics = (props) => {
     </table>
   );
 };
+//배열 > PropTypes.shape을 사용하여 오브젝트 형태로 디테일한 타입을 정할 수 있다.
+Statistics.propTypes = {
+  players: PropTypes.arrayOf(PropTypes.shape({
+    score: PropTypes.number
+  }))
+}

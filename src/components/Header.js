@@ -14,7 +14,8 @@ export const Header = ({players, title}) => {
   );
 };
 
+// https://reactjs.org/docs/typechecking-with-proptypes.html
 Header.propTypes = {
-  palyers: PropTypes.array,
+  players: PropTypes.arrayOf(PropTypes.object), //배열 안의 요소가 Object인지 확인
   title: PropTypes.string
 }
