@@ -18,4 +18,6 @@ Named export
 
 함수표현식 / 함수선언식
 
+SyntheticEvent 이벤트를 공통화(추상화) 해준다.
+
 clean code 책보기...

@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import {Header} from "./components/Header";
 import {Player} from "./components/Player";
+import {AddPlayerForm} from "./components/AddPlayerForm";
 
 class App extends React.Component {
   state = {
@@ -11,7 +12,7 @@ class App extends React.Component {
       {name: 'KIM', score: 0, id: 2},
       {name: 'PARK', score: 0, id: 3},
     ]
-  }
+  };
 
   handleRemove = (id) => {
     // let { players } = this.state;
@@ -19,13 +20,13 @@ class App extends React.Component {
     this.setState(prevState => ({
       players: prevState.players.filter(player => player.id !== id)
     }))
-  }
+  };
 
   hadleChangeScore = (id, delta) => {
     this.setState(prevState => ({
       players: prevState.players.map(player => player.id === id ? {...player, score: player.score + delta} : player)
     }))
-  }
+  };
 
   render() {
     return (
@@ -44,6 +45,7 @@ class App extends React.Component {
             changeScore={this.hadleChangeScore}
           />)
         }
+        <AddPlayerForm/>
       </div>
     )
   }
