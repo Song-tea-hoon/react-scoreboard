@@ -1,24 +1,27 @@
 import React from 'react';
 import {Counter} from "./Counter";
 
-export class Player extends React.PureComponent { // PureComponent props의 값이 변할 때에만 render를 하는 Component
+// PureComponent : props의 값이 변할 때에만 render를 하는 Component 성능 최적화에 쓰인다...
+export class Player extends React.PureComponent {
   render() {
-    console.log(this.props.name, ' rendered');
+    // Destructuring assignment (해체 할당 문법 / 비구조화 할당? )
+    const { removePlayer, name, id } = this.props;
+    console.log(name, ' rendered');
     return (
       <div className="player">
       <span className="player-name">
-        <button className="remove-player" onClick={() => this.props.removePlayer(this.props.id)}>x</button>
+        <button className="remove-player" onClick={() => removePlayer(id)}>x</button>
       </span>
         <span className="player-name">
-        {this.props.name}
+        {name}
       </span>
-        <Counter score={this.props.score} index={this.props.index} changeScore={this.props.changeScore} />
+        <Counter {...this.props} />
       </div>
     );
   }
   // // React.Component에서 render가 실행되기 직전에 호출되는 메서드
   // // (true를 리턴하면 랜더링되고 false이면 랜더링 되지 않는다.)
-  // // return이 설정되지 않으면 에러발생..
+  // // return되지 않으면 에러발생..
   // shouldComponentUpdate(nextProps, nextState, nextContext) {
   //   return true;
   // }
