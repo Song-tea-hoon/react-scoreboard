@@ -1,0 +1,13 @@
+createElement -> JSX -> Component
+
+props
+
+state
+
+lifting state up : 개별 state를 최상단으로 올려주는것
+
+Unidirectional Data Flow : state는 최상위 컴포넌트인 App 컴포넌트에서 아래방향으로 흐른다.
+
+read only : Unidirectional Data Flow이기 때문에 상위 state변경은 어렵다. 그런 의미의 read only
+
+event : 자식 컴포넌트가 부모 컴포넌트에 등록된 함수를 호출해서 등록
