@@ -35,3 +35,5 @@ componentWillUnmount - 삭제되기 직전에 호출되는 함수
 
 Conditional Rendering(컨디셔널 렌더링) -> 상황에 따라 화면 렌더링( v-if, ng-if 같은 개념)
 https://reactjs.org/docs/conditional-rendering.html
+
+PureComponent -> prop의 값이 변하지 않으면 렌더링을 실행하지 않는 컴포넌트
