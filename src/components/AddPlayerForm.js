@@ -1,11 +1,11 @@
 import React from 'react';
 
 export class AddPlayerForm extends React.Component {
+  // Dom에 접근하기 위한 참조값
+  textInput = React.createRef();
+
   constructor(props) {
     super(props);
-    this.state = {
-      playerName: ''
-    }
   }
 
   handleValueChange = (e) => {
@@ -17,7 +17,8 @@ export class AddPlayerForm extends React.Component {
   handleSubmit = (e) => {
     // 이벤트를 막지 않으면 페이지가 리프레시 되면서 로컬에 저장되어있던 데이터가 날라간다.
     e.preventDefault();
-    this.props.addPlayer(this.state.playerName);
+    // 실재 dom을 참조하여 value를 리턴!
+    this.props.addPlayer(this.textInput.current.value);
     // 폼초기화
     this.setState({playerName: ''});
   }
@@ -30,14 +31,9 @@ export class AddPlayerForm extends React.Component {
       enter버튼을 사용가능
       */
       <form onSubmit={this.handleSubmit}>
+        {/*DOM을 ref에 등록*/}
         <input type="text"
-          /*
-          - 기본 value만 설정을 해주면 value값의 변경을 해줘야하는 handler가 반드시 들어가야한다
-          - one way바인딩 이므로 값을 state에 적용하는 handler를 요구한다.
-          (미 설정시 핸들러를 만들거나 readonly롤 설정해야 한다는 error발생)
-          */
-               value={this.state.playerName}
-               onChange={this.handleValueChange}
+               ref={this.textInput}
                placeholder="enter a player's name"/>
         <input type="submit" value="Add Player"/>
       </form>
