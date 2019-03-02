@@ -1,8 +1,6 @@
 createElement -> JSX -> Component
 
-props
-
-state
+props, state
 
 lifting state up : 개별 state를 최상단으로 올려주는것
 
@@ -21,3 +19,11 @@ Named export
 SyntheticEvent 이벤트를 공통화(추상화) 해준다.
 
 clean code 책보기...
+
+handler개발순서 > 최상의 컴포넌트에서 먼저 handler선언 후 아래로 내린다
+
+controlled component
+HTML element는 자기 자신의 state를 가지고 있고, 사용자의 입력에 따라 그 state를 업데이트한다.
+리액트에서는 이와 같이 mutable state는 컴포넌트의 state 속성에 정의하고 setState로 업데이트해야 한다.
+그러므로 input form은 리액트에서 컨트롤되어야 하는데 이와 같은 컴포는트를 controlled component라고 한다.
+사용자가 input을 입력하면 바로 상태가 바뀌고 바뀐 상태가 바로 리렌더링되서 화면에 보여주게 된다.

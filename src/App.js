@@ -28,6 +28,29 @@ class App extends React.Component {
     }))
   };
 
+  // 이벤트는 부모먼저 구현 후 자식에게 내려준다.
+  handleAddPlayer = (name) => {
+    /*
+      deep copy
+      담아두는 배열은 새로운 배열
+      안에 있는 player는 기존의 object이다.
+    */
+    this.setState(prevState => {
+      let maxId = 0;
+      // 삼항연산자
+      // this.state.players.forEach(item => item.id > maxId ? (maxId = item.id ) : (maxId = maxId));
+      // Logical AND
+      this.state.players.forEach(item => item.id > maxId && (maxId = item.id ));
+      // ...연산자를 통해서 새로운 배열을 생성
+      return {
+        players: [
+          ...prevState.players,
+          {id: maxId + 1, name, score: 0}
+        ]
+      }
+    })
+  }
+
   render() {
     return (
       <div className="scoreboard">
@@ -45,7 +68,7 @@ class App extends React.Component {
             changeScore={this.hadleChangeScore}
           />)
         }
-        <AddPlayerForm/>
+        <AddPlayerForm addPlayer={this.handleAddPlayer}/>
       </div>
     )
   }
