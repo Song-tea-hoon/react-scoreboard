@@ -39,3 +39,8 @@ https://reactjs.org/docs/conditional-rendering.html
 PureComponent -> prop의 값이 변하지 않으면 렌더링을 실행하지 않는 컴포넌트
 
 pubsub구조 -> 1:다 통신
+
+=====================================================
+단축키
+Ctrl + Alt + o : 안쓰는 코드 삭제
+Alt + Enter : auto import
