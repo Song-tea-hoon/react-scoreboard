@@ -14,16 +14,15 @@ export class Heroes extends React.Component {
   };
 
   handleLoad = (e) => {
-    console.log(e)
-    console.log(e.currentTarget)
+    // console.log(e)
+    // console.log(e.currentTarget)
   }
 
   render() {
     console.log(styles);
     return (
-      <div className="row">
+      <div className="card-columns">
         {this.state.heroes.map(hero => (
-          <div className="col-12 col-sm-6 col-md-4 col-lg-3 p-1 p-sm-2 p-md-3" key={hero.hero_id}>
             <div className="card">
               <img onLoad={this.handleLoad} src={ (hero.photo && hero.photo !== 'undefined') ? hero.photo : process.env.PUBLIC_URL + '/images/baseline-face-24px.svg'}
                    style={{width: '100%'}} alt={hero.name}></img>
@@ -33,7 +32,6 @@ export class Heroes extends React.Component {
                 <p className="card-text">sex: {hero.sex}</p>
               </div>
             </div>
-          </div>
         ))}
       </div>
     );
