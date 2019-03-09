@@ -2,6 +2,7 @@ import React from 'react';
 import Counter from "./Counter";
 import {removePlayer} from "../redux/actions";
 import {connect} from "react-redux";
+import styles from '../pages/scoreboard/Scoreboard.module.css'
 
 // PureComponent : props의 값이 변할 때에만 render를 하는 Component 성능 최적화에 쓰인다...
 class Player extends React.PureComponent {
@@ -10,11 +11,11 @@ class Player extends React.PureComponent {
     const { removePlayer, name, id, score } = this.props;
     console.log(name, ' rendered');
     return (
-      <div className="player">
-      <span className="player-name">
-        <button className="remove-player" onClick={() => removePlayer(id)}>x</button>
+      <div className={styles.player}>
+      <span className={styles["player-name"]}>
+        <button className={styles["remove-player"]} onClick={() => removePlayer(id)}>x</button>
       </span>
-        <span className="player-name">
+        <span className={styles["player-name"]}>
         {name}
       </span>
         <Counter index={id} name={name} score={score} />
