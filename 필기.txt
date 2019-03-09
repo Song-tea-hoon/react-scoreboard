@@ -37,3 +37,5 @@ Conditional Rendering(컨디셔널 렌더링) -> 상황에 따라 화면 렌더�
 https://reactjs.org/docs/conditional-rendering.html
 
 PureComponent -> prop의 값이 변하지 않으면 렌더링을 실행하지 않는 컴포넌트
+
+pubsub구조 -> 1:다 통신
