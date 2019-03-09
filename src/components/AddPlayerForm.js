@@ -6,9 +6,9 @@ class AddPlayerForm extends React.Component {
   // Dom에 접근하기 위한 참조값
   textInput = React.createRef();
 
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
 
   handleValueChange = (e) => {
     // e - SyntheticEvent 이벤트를 공통화(추상화) 해준다.

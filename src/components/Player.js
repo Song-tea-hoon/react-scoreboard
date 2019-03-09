@@ -31,6 +31,6 @@ class Player extends React.PureComponent {
 
 const mapActionToProps = (dispatch) => ({
   removePlayer: (id) => dispatch(removePlayer(id))
-})
+});
 
-export default connect(null, mapActionToProps)(Player)
+export default connect(null, mapActionToProps)(Player);
