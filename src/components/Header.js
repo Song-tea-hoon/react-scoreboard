@@ -1,15 +1,16 @@
 import React from 'react';
 import {connect} from "react-redux";
+import {updateTitle} from "../redux/actions";
 import PropTypes from 'prop-types';
 import {Statistics} from "./Statistics";
 import {Stopwatch} from "./Stopwatch";
 
 // Destructuring assignment (해체 할당 문법 / 비구조화 할당? )
-const Header = ({players, title}) => {
+const Header = ({players, title, changeTitle}) => {
   return (
     <header>
       <Statistics players={players}/>
-      <h1>{title}</h1>
+      <h1 onClick={() => changeTitle('test coreboader')}>{title}</h1>
       <Stopwatch />
     </header>
   );
@@ -30,4 +31,11 @@ let mapStateToPorps = (state) => ({
   title: state.playerReducer.title
 })
 
-export default connect(mapStateToPorps)(Header);
+// action을 dispatch하는 function을 props로 맵핑한다.
+// let mapActionToProps = (dispatch) => {
+//   return {
+//     changeTitle: (title) => dispatch(updateTitle(title))
+//   }
+// }
+
+export default connect(mapStateToPorps, {changeTitle: updateTitle})(Header);
