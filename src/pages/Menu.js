@@ -32,7 +32,7 @@ export class Menu extends React.Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink to="/heros" className="nav-link">Heroes</NavLink>
+                  <NavLink to="/heroes" className="nav-link">Heroes</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink to="/scoreboard" className="nav-link">Scoreboard</NavLink>
