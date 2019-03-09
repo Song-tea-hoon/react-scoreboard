@@ -15,7 +15,7 @@ export class Player extends React.PureComponent {
         <span className="player-name">
         {name}
       </span>
-        <Counter id={id} name={name} score={score} />
+        <Counter index={id} name={name} score={score} />
       </div>
     );
   }
