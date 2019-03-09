@@ -47,5 +47,9 @@ flex같은 문법을 쓰면 알아서 prefix를 붙여준다.
 
 =====================================================
 단축키
+
+https://intellegibilisverum.tistory.com/entry/%EC%9B%B9%EC%8A%A4%ED%86%B0-%EB%8B%A8%EC%B6%95%ED%82%A4
+
 Ctrl + Alt + o : 안쓰는 코드 삭제
 Alt + Enter : auto import
+Alt + J : 동일변수 선택
