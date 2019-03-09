@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from "react-redux";
 
-export const Statistics = (props) => {
+const Statistics = (props) => {
 
   const players = props.players.length;
   // const totalScore = props.players.reduce((accumulator, currentValue) => accumulator + currentValue.score, props.players[0].score); // 보기 어렵다... 쉬운 방법으로
@@ -29,3 +30,9 @@ Statistics.propTypes = {
     score: PropTypes.number
   }))
 }
+
+const mapStateToProps = (state) => ({
+  storePlayers: state.playerReducer.players
+})
+
+export default connect(mapStateToProps)(Statistics) // <- HOC( High order Component )로 변환

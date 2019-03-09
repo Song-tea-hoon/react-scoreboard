@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import {updateTitle} from "../redux/actions";
 import PropTypes from 'prop-types';
-import {Statistics} from "./Statistics";
+import Statistics from "./Statistics";
 import {Stopwatch} from "./Stopwatch";
 
 // Destructuring assignment (해체 할당 문법 / 비구조화 할당? )
