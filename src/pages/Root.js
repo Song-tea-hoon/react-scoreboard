@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {Home} from "./Home";
 import {Heroes} from "./Heroes";
 import {Scoreboard} from "./Scoreboard";
+import {Menu} from "./Menu";
 
 export class Root extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ export class Root extends React.Component {
       <BrowserRouter>
         {/*<Fragment> 는 <>로 축약 가능*/}
         <Fragment>
-          <p>공통메뉴 영역</p>
+          <Menu></Menu>
           {/* switch는 일치하는 path의 페이지를 노출한다.
               그런데 path의 string의 맨앞부터 비교를 하는데 "/heros"에도 "/"가 포함되므로
               Home에서 일치한다고 판단 Home을 노출한다.
