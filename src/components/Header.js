@@ -38,4 +38,4 @@ let mapStateToPorps = (state) => ({
 //   }
 // }
 
-export default connect(mapStateToPorps, {changeTitle: updateTitle})(Header);
+export default connect(mapStateToPorps, {changeTitle: updateTitle})(Header); // <- HOC( High order Component )로 변환

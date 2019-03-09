@@ -24,14 +24,8 @@ class Counter extends React.Component {
   }
 }
 
-// Counter.propTypes = {
-//   score: PropTypes.number,
-//   index: PropTypes.number,
-//   changeScore: PropTypes.func
-// }
-
 const mapActionToProps = (dispatch) => ({
   changeScore: (index, score) => dispatch(changeScore(index, score))
 });
 
-export default connect(null, mapActionToProps)(Counter)
+export default connect(null, mapActionToProps)(Counter) // <- HOC( High order Component )로 변환

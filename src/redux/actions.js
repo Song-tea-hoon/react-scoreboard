@@ -7,11 +7,11 @@ export const updateTitle = (title) => ({
 
 export const addPlayer = (name) => ({
   type: ADD_PLAYER,
-  name
+  name // <- short hand property
 });
 
 export const changeScore = (index, score) => ({
   type: CHANGE_SCORE,
-  index,
-  score
+  index, // <- short hand property
+  score // <- short hand property
 });

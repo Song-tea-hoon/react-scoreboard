@@ -43,4 +43,4 @@ class AddPlayerForm extends React.Component {
   }
 }
 
-export default connect(null, {addPlayer})(AddPlayerForm)
+export default connect(null, {addPlayer})(AddPlayerForm) // <- HOC( High order Component )로 변환
