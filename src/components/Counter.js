@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {changeScore} from "../redux/actions";
 import{connect} from "react-redux";
+import classNames from 'classnames';
 import styles from '../pages/scoreboard/Scoreboard.module.css'
 
 class Counter extends React.Component {
@@ -14,14 +15,17 @@ class Counter extends React.Component {
 
   render() {
     const {changeScore, score, index} = this.props;
-    const button1 = styles["counter-action"] + ' ' + styles.decrement;
 
     return (
-      <div className={styles.counter}>
-        <button className={button1} onClick={()=>changeScore(index, -1)}>-</button>
-        <span className="counter-score">{score}</span>
+      <div className={classNames(styles.counter)}>
+        <button className={classNames( styles["counter-action"], styles.decrement )}
+                onClick={()=>changeScore(index, -1)}
+        >-</button>
+        <span className={classNames(styles["counter-score"])}>{score}</span>
         {/* 이벤트의 등록은 명령형이 아니라 선언형 스타일로 등록해야한다. */}
-        <button className="counter-action" onClick={()=>changeScore(index, 1)}>+</button>
+        <button className={classNames( styles["counter-action"], styles.increment )}
+                onClick={()=>changeScore(index, 1)}
+        >+</button>
       </div>
     )
   }
