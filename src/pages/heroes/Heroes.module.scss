@@ -1,0 +1,7 @@
+ul{
+  &.img-box { // 레퍼런스 연산자 부모의 뒤에 붙이는
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
