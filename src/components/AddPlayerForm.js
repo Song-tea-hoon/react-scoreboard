@@ -23,7 +23,7 @@ class AddPlayerForm extends React.Component {
     this.props.addPlayer(this.textInput.current.value);
     // 폼초기화
     this.setState({playerName: ''});
-  }
+  };
 
   render() {
     return (

@@ -1,5 +1,5 @@
 import {combineReducers, createStore} from "redux";
-import {ADD_PLAYER, UPDATE_TITLE} from "./actionType";
+import {ADD_PLAYER, CHANGE_SCORE, UPDATE_TITLE} from "./actionType";
 
 const playerInitialState = {
   title: 'Store Scoreboard',
@@ -19,7 +19,7 @@ const playerReducer = (state = playerInitialState, action) => {
       return { // 새로운 객체를 리턴해야한다.
         ...state,
         title: action.title
-      }
+      };
     case ADD_PLAYER :
       return {
         ...state,
@@ -31,7 +31,20 @@ const playerReducer = (state = playerInitialState, action) => {
             id: ++playerId
           }
         ]
-      }
+      };
+    case CHANGE_SCORE :
+      // 스코어 변경 적용
+      state.players.forEach(item => {
+        if(item.id === action.index){
+          item.score += action.score
+        }
+      });
+      return {
+        ...state,
+        players: [
+          ...state.players // 변경된 players deep copy
+        ]
+      };
     default :
       return state;
   }

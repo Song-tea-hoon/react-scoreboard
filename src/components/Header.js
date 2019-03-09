@@ -20,16 +20,16 @@ const Header = ({players, title, changeTitle}) => {
 Header.propTypes = {
   players: PropTypes.arrayOf(PropTypes.object), //배열 안의 요소가 Object인지 확인
   title: PropTypes.string
-}
+};
 
 // props의 기본 값을 지정한다.
 Header.defaultProps = {
   title: 'Scoreboard'
-}
+};
 
 let mapStateToPorps = (state) => ({
   title: state.playerReducer.title
-})
+});
 
 // action을 dispatch하는 function을 props로 맵핑한다.
 // let mapActionToProps = (dispatch) => {

@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {changeScore} from "../redux/actions";
+import{connect} from "react-redux";
 
-export class Counter extends React.Component {
+class Counter extends React.Component {
   // static 키워드를 이용하여 class내부에 prop-types 선언가능하다.
   static propTypes = {
     score: PropTypes.number,
     index: PropTypes.number,
     changeScore: PropTypes.func
-  }
+  };
 
   render() {
     const {changeScore, score, index} = this.props;
@@ -27,3 +29,9 @@ export class Counter extends React.Component {
 //   index: PropTypes.number,
 //   changeScore: PropTypes.func
 // }
+
+const mapActionToProps = (dispatch) => ({
+  changeScore: (index, score) => dispatch(changeScore(index, score))
+});
+
+export default connect(null, mapActionToProps)(Counter)

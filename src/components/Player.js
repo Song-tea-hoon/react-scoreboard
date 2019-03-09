@@ -1,11 +1,11 @@
 import React from 'react';
-import {Counter} from "./Counter";
+import Counter from "./Counter";
 
 // PureComponent : props의 값이 변할 때에만 render를 하는 Component 성능 최적화에 쓰인다...
 export class Player extends React.PureComponent {
   render() {
     // Destructuring assignment (해체 할당 문법 / 비구조화 할당? )
-    const { removePlayer, name, id } = this.props;
+    const { removePlayer, name, id, score } = this.props;
     console.log(name, ' rendered');
     return (
       <div className="player">
@@ -15,7 +15,7 @@ export class Player extends React.PureComponent {
         <span className="player-name">
         {name}
       </span>
-        <Counter {...this.props} />
+        <Counter id={id} name={name} score={score} />
       </div>
     );
   }
