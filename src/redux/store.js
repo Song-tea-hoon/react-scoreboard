@@ -1,5 +1,5 @@
 import {combineReducers, createStore} from "redux";
-import {ADD_PLAYER, CHANGE_SCORE, UPDATE_TITLE} from "./actionType";
+import {ADD_PLAYER, CHANGE_SCORE, REMOVE_PLAYER, UPDATE_TITLE} from "./actionType";
 
 const playerInitialState = {
   title: 'Store Scoreboard',
@@ -45,6 +45,11 @@ const playerReducer = (state = playerInitialState, action) => {
           ...state.players // 변경된 players deep copy
         ]
       };
+    case REMOVE_PLAYER :
+      return {
+        ...state,
+        players: state.players.filter(player => player.id !== action.id)
+      }
     default :
       return state;
   }

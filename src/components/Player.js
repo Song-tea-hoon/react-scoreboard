@@ -1,8 +1,10 @@
 import React from 'react';
 import Counter from "./Counter";
+import {removePlayer} from "../redux/actions";
+import {connect} from "react-redux";
 
 // PureComponent : props의 값이 변할 때에만 render를 하는 Component 성능 최적화에 쓰인다...
-export class Player extends React.PureComponent {
+class Player extends React.PureComponent {
   render() {
     // Destructuring assignment (해체 할당 문법 / 비구조화 할당? )
     const { removePlayer, name, id, score } = this.props;
@@ -26,3 +28,9 @@ export class Player extends React.PureComponent {
   //   return true;
   // }
 }
+
+const mapActionToProps = (dispatch) => ({
+  removePlayer: (id) => dispatch(removePlayer(id))
+})
+
+export default connect(null, mapActionToProps)(Player)

@@ -1,4 +1,4 @@
-import {ADD_PLAYER, CHANGE_SCORE, UPDATE_TITLE} from "./actionType";
+import {ADD_PLAYER, CHANGE_SCORE, REMOVE_PLAYER, UPDATE_TITLE} from "./actionType";
 
 export const updateTitle = (title) => ({
   type: UPDATE_TITLE,
@@ -15,3 +15,8 @@ export const changeScore = (index, score) => ({
   index, // <- short hand property
   score // <- short hand property
 });
+
+export const removePlayer = (id) => ({
+  type: REMOVE_PLAYER,
+  id // <- short hand property
+})

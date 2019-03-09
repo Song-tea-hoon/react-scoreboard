@@ -1,18 +1,18 @@
 import React from 'react';
 import './App.css';
 import Header from "./components/Header";
-import {Player} from "./components/Player";
+import Player from "./components/Player";
 import AddPlayerForm from "./components/AddPlayerForm";
 import {connect} from "react-redux";
 
 
 class App extends React.Component {
 
-  handleRemove = (id) => {
-    this.setState(prevState => ({
-      players: prevState.players.filter(player => player.id !== id)
-    }))
-  };
+  // handleRemove = (id) => {
+  //   this.setState(prevState => ({
+  //     players: prevState.players.filter(player => player.id !== id)
+  //   }))
+  // };
 
   render() {
     return (
@@ -24,7 +24,6 @@ class App extends React.Component {
             {...player}
             key={player.id}
             index={index}
-            removePlayer={this.handleRemove}
           />)
         }
         <AddPlayerForm />
