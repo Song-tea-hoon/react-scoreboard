@@ -1,10 +1,11 @@
 import React from 'react';
+import {connect} from "react-redux";
+import PropTypes from 'prop-types';
 import {Statistics} from "./Statistics";
 import {Stopwatch} from "./Stopwatch";
-import PropTypes from 'prop-types';
 
 // Destructuring assignment (해체 할당 문법 / 비구조화 할당? )
-export const Header = ({players, title}) => {
+const Header = ({players, title}) => {
   return (
     <header>
       <Statistics players={players}/>
@@ -24,3 +25,9 @@ Header.propTypes = {
 Header.defaultProps = {
   title: 'Scoreboard'
 }
+
+let mapStateToPorps = (state) => ({
+  title: state.playerReducer.title
+})
+
+export default connect(mapStateToPorps)(Header);
